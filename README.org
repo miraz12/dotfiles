@@ -1,1 +1,7 @@
-# Dotfiles
+* Dotfiles
+
+#+BEGIN_SRC bash
+ln -s ~/.config/doom.d ~/.doom.d
+ln -s ~/.config/emacs.d ~/.emacs.d
+ln -s ~/.config/zsh/zshrc ~/.zshrc
+#+END_SRC
