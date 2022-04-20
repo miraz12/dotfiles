@@ -1,7 +1,12 @@
 * Dotfiles
 
 #+BEGIN_SRC bash
-ln -s ~/.config/doom.d ~/.doom.d
-ln -s ~/.config/emacs.d ~/.emacs.d
-ln -s ~/.config/zsh/zshrc ~/.zshrc
+pacman -S xorg plasma konsole dolphin neovim emacs git firefox openssh base-devel kdeconnect
+git clone /opt/ && cd /opt/yay/ && makepkg -si
+yay -S nvim-packer-git
+#+END_SRC
+
+#+BEGIN_SRC bash
+ln -s ~/.dotfiles/doom.d ~/.doom.d
+ln -s ~/.dotfiles/nvim ~/.config/nvim
 #+END_SRC
