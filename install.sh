@@ -1,12 +1,16 @@
 #!/bin/bash
-pacman -S xorg plasma konsole dolphin neovim emacs git firefox openssh base-devel kdeconnect
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-git clone /opt/ && cd /opt/yay/ && makepkg -si
-yay -S nvim-packer-git
-# Setup Links
-ln -s ~/.dotfiles/doom.d ~/.doom.d
-ln -s ~/.dotfiles/nvim ~/.config/nvim
-# Install doom
-~/.emacs.d/bin/doom install
 
+codeblock=0
+while read line; 
+do 
+	if [[ $line == *"END_SRC bash"* ]]; then
+		codeblock=0
+	fi
+	if [[ codeblock == 1 ]]; then
+		$line; 
+	fi
+	if [[ $line == *"BEGIN_SRC bash"* ]]; then
+		codeblock=1
+	fi
+done < README.org
 
