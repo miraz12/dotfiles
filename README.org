@@ -7,8 +7,8 @@ https://wiki.archlinux.org/title/Installation_guide
 #+BEGIN_SRC bash
 pacman -S xorg plasma konsole dolphin neovim emacs git firefox openssh base-devel kdeconnect
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-git clone https://aur.archlinux.org/yay.git /opt/yay && cd /opt/yay/ && makepkg -si
-yay -S nvim-packer-git
+git clone https://aur.archlinux.org/paru.git paru && cd paru && makepkg -si
+paru -S nvim-packer-git
 #+END_SRC
 
 *** Setup links
