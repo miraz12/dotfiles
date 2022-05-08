@@ -7,7 +7,7 @@ do
 		codeblock=0
 	fi
 	if [[ $codeblock == 1 ]]; then
-		echo $line; 
+		$line; 
 	fi
 	if [[ $line == *"BEGIN_SRC bash"* ]]; then
 		codeblock=1
