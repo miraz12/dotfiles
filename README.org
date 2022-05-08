@@ -15,6 +15,9 @@ paru -S nvim-packer-git
 #+BEGIN_SRC bash
 ln -s ~/.dotfiles/doom.d ~/.doom.d
 ln -s ~/.dotfiles/nvim ~/.config/nvim
+ln -s ~/.dotfiles/kitty ~/.config/kitty
+ln -s ~/.dotfiles/oh-my-zsh ~/.oh-my-zsh
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
 #+END_SRC
 
 *** Install doom
