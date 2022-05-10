@@ -5,6 +5,7 @@ while read line;
 do 
 	if [[ $line == *"END_SRC"* ]]; then
 		codeblock=0
+		continue
 	fi
 	if [[ $codeblock == 1 ]]; then
 		$line; 

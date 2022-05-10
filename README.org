@@ -5,7 +5,7 @@ https://wiki.archlinux.org/title/Installation_guide
 ** Setup 
 *** Install packages, clone doom, install yay
 #+BEGIN_SRC bash
-pacman -S xorg plasma dolphin neovim emacs git firefox openssh base-devel kdeconnect nextcloud-client networkmanager kitty zsh
+pacman -S --noconfirm xorg plasma dolphin neovim emacs git firefox openssh base-devel kdeconnect nextcloud-client networkmanager kitty zsh
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 git clone https://aur.archlinux.org/paru.git paru && cd paru && makepkg -si
 paru -S nvim-packer-git
@@ -13,11 +13,11 @@ paru -S nvim-packer-git
 
 *** Setup links
 #+BEGIN_SRC bash
-ln -s ~/.dotfiles/doom.d ~/.doom.d
-ln -s ~/.dotfiles/nvim ~/.config/nvim
-ln -s ~/.dotfiles/kitty ~/.config/kitty
-ln -s ~/.dotfiles/oh-my-zsh ~/.oh-my-zsh
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s -f ~/.dotfiles/doom.d ~/.doom.d
+ln -s -f ~/.dotfiles/nvim ~/.config/nvim
+ln -s -f ~/.dotfiles/kitty ~/.config/kitty
+ln -s -f ~/.dotfiles/oh-my-zsh ~/.oh-my-zsh
+ln -s -f ~/.dotfiles/.zshrc ~/.zshrc
 #+END_SRC
 
 *** Install doom
