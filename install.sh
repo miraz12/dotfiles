@@ -8,9 +8,9 @@ do
 		continue
 	fi
 	if [[ $codeblock == 1 ]]; then
-		$line; 
+		echo $line;
 	fi
-	if [[ $line == *"BEGIN_SRC bash"* ]]; then
+	if [[ $line == *"BEGIN_SRC bash"*"install"* ]]; then
 		codeblock=1
 	fi
 done < README.org
