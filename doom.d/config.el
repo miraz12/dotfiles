@@ -33,7 +33,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-dracula)
-(setq doom-font (font-spec :family "Iosevka" :size 20))
+(setq doom-font (font-spec :family "Iosevka" :size 16))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -110,3 +110,19 @@
       mu4e-index-lazy-check t
       ;; more sensible date format
       mu4e-headers-date-format "%d.%m.%y")
+
+(setq org-hugo-section "post")
+(setq org-hugo-base-dir "~/sites/org-roam/")
+
+(setq org-publish-project-alist
+'(
+ ("org-notes"
+ :base-directory "~/org/roam"
+ :base-extension "org"
+ :publishing-directory "~/public_hugo/"
+ :recursive t
+ :publishing-function org-hugo-export-to-md
+ :headline-levels 4             ; Just the default for this project.
+ :auto-preamble t
+ )
+ ))
