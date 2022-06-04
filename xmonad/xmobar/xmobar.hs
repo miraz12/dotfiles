@@ -20,13 +20,39 @@ Config { font = "xft:iosevka:size=10:bold"
          [ Run UnsafeXPropertyLog "_XMONAD_LOG_0"
          , Run Date "%a, %d %b   <fn=1></fn>   %H:%M:%S" "date" 10
          , Run Memory ["-t","Mem: <fc=#AAC0F0><usedratio></fc>%"] 10
-         , Run Com "/home/shaggy/.config/xmonad/xmobar/scripts/cpu_temp.sh" [] "cpu" 10
+         , Run Com "/home/shaggy/.config/xmonad/xmobar/scripts/cpu_temp.sh" [] "cputemp" 10
          , Run Com "/home/shaggy/.config/xmonad/xmobar/scripts/gpu_temp.sh" [] "gpu" 10
          , Run Com "/home/shaggy/.config/xmonad/xmobar/scripts/available_updates.sh" [] "updates" 10
          , Run Com "/home/shaggy/.config/xmonad/xmobar/scripts/volume.sh" [] "volume" 10
          , Run Com "/home/shaggy/.config/xmonad/xmobar/scripts/bluetooth.sh" [] "bluetooth" 10
          , Run Com "/home/shaggy/.config/xmonad/xmobar/scripts/wifi.sh" [] "network" 10
          , Run Com "/home/shaggy/.config/xmonad/xmobar/scripts/trayer-padding.sh" [] "trayerpad" 10
+         , Run Cpu [
+           "-L", "3",
+           "-H", "50",
+           "--normal", "green",
+           "--high","red"
+           ] 10
+         , Run Battery
+           [ "--template" , "Batt: <acstatus>"
+           , "--Low"      , "10"        -- units: %
+           , "--High"     , "80"        -- units: %
+           , "--low"      , "darkred"
+           , "--normal"   , "darkorange"
+           , "--high"     , "darkgreen"
+           , "--" -- battery specific options
+           -- discharging status
+           , "-o"	, "<left>% (<timeleft>)"
+           -- AC "on" status
+           , "-O"	, "<fc=#dAA520>Charging</fc>"
+           -- charged status
+           , "-i"	, "<fc=#006000>Charged</fc>"
+           ] 50
+         , Run Kbd
+           [ ("se", "<fc=#00008B>SE</fc>")
+           , ("us", "<fc=#8B0000>US</fc>")
+           ]
+        ]
          ]
        , sepChar = "%"
        , alignSep = "}{"
@@ -37,9 +63,16 @@ Config { font = "xft:iosevka:size=10:bold"
             \<action=xdotool key super+r>%date%</action>\
             \{\
             \<action=xdotool key super+y>\
+            \ \
             \%volume%\
             \ \
             \%network%\
+            \ \
+            \%kbd%\
+            \ \
+            \|\
+            \ \
+            \%battery%\
             \ \
             \|\
             \ \
@@ -48,6 +81,8 @@ Config { font = "xft:iosevka:size=10:bold"
             \|\
             \ \
             \%cpu%\
+            \ \
+            \%cputemp%\
             \ \
             \|\
             \ \

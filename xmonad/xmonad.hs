@@ -134,8 +134,11 @@ myManageHook = composeAll
   [ resource  =? "desktop_window" --> doIgnore
   , isFloat --> doCenterFloat
   , isDialog --> doCenterFloat
+  , title =? "League of Legends" --> doFloat
+  , title =? "Riot Client Main" --> doFloat
   , insertPosition Master Newer
   ] <+> manageDocks  
+
 
 ------------------------------------------------------------------------
 --

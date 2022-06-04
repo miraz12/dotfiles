@@ -31,6 +31,7 @@ ln -s -f ~/.dotfiles/nvim ~/.config/nvim
 ln -s -f ~/.dotfiles/kitty ~/.config/kitty
 ln -s -f ~/.dotfiles/oh-my-zsh ~/.oh-my-zsh
 ln -s -f ~/.dotfiles/.zshrc ~/.zshrc
+ln -s -f ~/.dotfiles/xmonad ~/.config/xmonad
 #+END_SRC
 
 *** Install doom
