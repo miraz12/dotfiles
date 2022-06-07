@@ -30,27 +30,27 @@ Config { font = "xft:iosevka:size=10:bold"
          , Run Cpu [
            "-L", "3",
            "-H", "50",
-           "--normal", "green",
-           "--high","red"
+           "--normal", "#50fa7b",
+           "--high","#ff5555"
            ] 10
          , Run Battery
            [ "--template" , "Batt: <acstatus>"
            , "--Low"      , "10"        -- units: %
            , "--High"     , "80"        -- units: %
-           , "--low"      , "darkred"
-           , "--normal"   , "darkorange"
-           , "--high"     , "darkgreen"
+           , "--low"      , "#ff5555"
+           , "--normal"   , "#ffb86c"
+           , "--high"     , "#50fa7b"
            , "--" -- battery specific options
            -- discharging status
            , "-o"	, "<left>% (<timeleft>)"
            -- AC "on" status
-           , "-O"	, "<fc=#dAA520>Charging</fc>"
+           , "-O"	, "<fc=#ffb86c>Charging</fc>"
            -- charged status
-           , "-i"	, "<fc=#006000>Charged</fc>"
+           , "-i"	, "<fc=#50fa7b>Charged</fc>"
            ] 50
          , Run Kbd
-           [ ("se", "<fc=#00008B>SE</fc>")
-           , ("us", "<fc=#8B0000>US</fc>")
+           [ ("se", "<fc=#6272a4>SE</fc>")
+           , ("us", "<fc=#6272a4>US</fc>")
            ]
         ]
          ]
