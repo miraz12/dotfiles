@@ -100,7 +100,7 @@
    (mu4e-refile-folder      . "/[Hotmail]/Inbox")
    (smtpmail-smtp-user     . "anton_christoffersson@hotmail.com"))
  t)
-(setq mu4e-get-mail-command "mbsync -c .config/mu4e/mbsyncrc gmail hotmail"
+(setq mu4e-get-mail-command "mbsync -c ~/.config/mu4e/mbsyncrc gmail hotmail"
       ;; get emails and index every 5 minutes
       mu4e-update-interval 300
       ;; send emails with format=flowed
@@ -126,3 +126,6 @@
  :auto-preamble t
  )
  ))
+(defun shr-render-current-buffer ()
+  (shr-render-region (point-min) (point-max)))
+(setq mu4e-html2text-command 'shr-render-current-buffer)

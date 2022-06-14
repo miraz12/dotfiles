@@ -91,6 +91,7 @@ source $ZSH/oh-my-zsh.sh
    export VISUAL="emacsclient -c -a emacs"
  fi
 
+export term=xterm
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -106,3 +107,4 @@ source $ZSH/oh-my-zsh.sh
 alias vim='nvim'
 alias emacs='emacsclient --create-frame --alternate-editor=""'
 
+cbonsai -p
