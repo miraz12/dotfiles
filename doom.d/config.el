@@ -90,14 +90,14 @@
  "gmail"
  '((mu4e-sent-folder       . "/[Gmail]/Sent Mail")
    (mu4e-trash-folder      . "/[Gmail]/Bin")
-   (mu4e-refile-folder      . "/[Gmail]/All Mail")
+   (mu4e-refile-folder      . "/[Gmail]/Inbox")
    (smtpmail-smtp-user     . "pluppe12@gmail.com"))
  t)
 (set-email-account!
  "gmail"
  '((mu4e-sent-folder       . "/[Hotmail]/Sent Mail")
    (mu4e-trash-folder      . "/[Hotmail]/Bin")
-   (mu4e-refile-folder      . "/[Hotmail]/All Mail")
+   (mu4e-refile-folder      . "/[Hotmail]/Inbox")
    (smtpmail-smtp-user     . "anton_christoffersson@hotmail.com"))
  t)
 (setq mu4e-get-mail-command "mbsync -c .config/mu4e/mbsyncrc gmail hotmail"
