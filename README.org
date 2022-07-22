@@ -5,11 +5,11 @@ https://wiki.archlinux.org/title/Installation_guide
 ** Setup 
 *** Install packages, clone doom, install yay
 #+BEGIN_SRC bash install
-	sudo pacman -S --noconfirm xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
-	git clone https://aur.archlinux.org/paru.git paru 
-	cd paru 
-	makepkg -si
-	paru -S nvim-packer-git ttf-iosevka
+sudo pacman -S --noconfirm xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
+git clone https://aur.archlinux.org/paru.git paru 
+cd paru 
+makepkg -si
+paru -S nvim-packer-git ttf-iosevka
 #+END_SRC
 
 #+BEGIN_SRC bash
