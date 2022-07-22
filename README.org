@@ -5,11 +5,18 @@ https://wiki.archlinux.org/title/Installation_guide
 ** Setup 
 *** Install packages, clone doom, install yay
 #+BEGIN_SRC bash install
-pacman -S --noconfirm xorg plasma dolphin neovim emacs git firefox openssh base-devel kdeconnect nextcloud-client networkmanager kitty zsh
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-git clone https://aur.archlinux.org/paru.git paru && cd paru && makepkg -si
-paru -S nvim-packer-git ttf-iosevka   
+	sudo pacman -S --noconfirm xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
+	git clone https://aur.archlinux.org/paru.git paru 
+	cd paru 
+	makepkg -si
+	paru -S nvim-packer-git ttf-iosevka
 #+END_SRC
+
+#+BEGIN_SRC bash
+ln -s -f ~/.dotfiles/xmonad ~/.config/xmonad
+sudo pacman -S tff-font-awesome trayer dmenu kwallet-pam
+#+END_SRC
+Install xmonad, xmonad-contrib and xmobar with stack.
 
 *** Setup email
 #+BEGIN_SRC bash
@@ -26,15 +33,16 @@ mu init --maildir ~/.mail
 
 *** Setup links
 #+BEGIN_SRC bash
-ln -s -f ~/.dotfiles/doom.d ~/.doom.d
 ln -s -f ~/.dotfiles/nvim ~/.config/nvim
 ln -s -f ~/.dotfiles/kitty ~/.config/kitty
 ln -s -f ~/.dotfiles/oh-my-zsh ~/.oh-my-zsh
 ln -s -f ~/.dotfiles/.zshrc ~/.zshrc
-ln -s -f ~/.dotfiles/xmonad ~/.config/xmonad
 #+END_SRC
 
 *** Install doom
 #+BEGIN_SRC bash
+ln -s -f ~/.dotfiles/doom.d ~/.doom.d
+rm -r ~/.emacs.d
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 #+END_SRC

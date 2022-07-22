@@ -146,7 +146,7 @@ myManageHook = composeAll
 myStartupHook :: X ()
 myStartupHook = do
     spawn "killall trayer; trayer --monitor 2 --edge top --align right --widthtype request --padding 7 --iconspacing 10 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x2B2E37  --height 20 &"
-    spawn "killall feh; feh --bg-fill --no-fehbg ~/Pictures/wallpapers/wp4676582-4k-pc-wallpapers.jpg &"
+    spawn "killall feh; feh --bg-fill --no-fehbg ~/Pictures/snm.jpg &"
     modify $ \xstate -> xstate { windowset = onlyOnScreen 1 "1_1" (windowset xstate) }
 
 

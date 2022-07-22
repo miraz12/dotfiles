@@ -89,9 +89,11 @@ source $ZSH/oh-my-zsh.sh
  else
    export EDITOR="emacsclient -t"
    export VISUAL="emacsclient -c -a emacs"
+   export TERM="xterm"
  fi
 
-export term=xterm
+export PATH=$PATH:~/.local/bin
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

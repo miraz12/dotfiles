@@ -9,6 +9,7 @@ do
 	fi
 	if [[ $codeblock == 1 ]]; then
 		echo $line;
+		$line;
 	fi
 	if [[ $line == *"BEGIN_SRC bash"*"install"* ]]; then
 		codeblock=1

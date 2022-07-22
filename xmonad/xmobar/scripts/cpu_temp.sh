@@ -3,7 +3,7 @@
 temp1=70
 temp2=85
 
-temp=$(sensors | grep 'Package id 0:' | awk '{print $4}' | sed 's/+//'| sed 's/.0°C//')
+temp=$(sensors | grep 'CPU' | awk '{print $2}' | sed 's/+//'| sed 's/.0°C//')
 temp=${temp%???}
 
 if [ "$temp" -ge "$temp2" ] ; then
