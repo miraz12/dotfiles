@@ -19,7 +19,7 @@ usermod -aG sudo wheel username
 passwd username
 visudo (uncomment %wheel ALL=(ALL) ALL
 su username
-curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
+git clone https://github.com/miraz12/dotfiles.git .dotfiles
 #+END_SRC
 
 *** Pull this repo, install paru, nvim-packer and iosevka font
