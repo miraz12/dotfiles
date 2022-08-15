@@ -8,7 +8,7 @@ curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 
 ** Setup 
 *** Install packages, clone doom, install yay
-#+BEGIN_SRC bash instal
+#+BEGIN_SRC bash install
 pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
 git clone https://aur.archlinux.org/paru.git paru 
 cd paru 
@@ -26,7 +26,6 @@ Install xmonad, xmonad-contrib and xmobar with stack.
 #+BEGIN_SRC bash
 pacman -S isync
 paru -S mu
-mkdir .mail
 mkdir .mail/gmail
 mkdir .mail/hotmail
 mbsync -c .config/mu4e/mbsyncrc --all
