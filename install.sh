@@ -3,6 +3,7 @@
 curl -LO "raw.githubusercontent.com/miraz12/dotfiles/main/README.org"
 
 codeblock=0
+read flags
 while read line; 
 do 
 	if [[ $line == *"END_SRC"* ]]; then
@@ -13,8 +14,7 @@ do
 		echo $line;
 		$line;
 	fi
-	if [[ $line == *"BEGIN_SRC bash"*"install"* ]]; then
+	if [[ $line == *"BEGIN_SRC bash"*$flags* ]]; then
 		codeblock=1
 	fi
 done < README.org
-
