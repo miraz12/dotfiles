@@ -34,6 +34,7 @@ paru -S nvim-packer-git ttf-iosevka
 ln -s -f ~/.dotfiles/xmonad ~/.config/xmonad
 sudo pacman -S tff-font-awesome trayer dmenu kwallet-pam
 #+END_SRC
+Install xmonad, xmonad-contrib and xmobar with stack.
 
 
 *** Setup email
