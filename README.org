@@ -21,7 +21,7 @@ passwd username
 visudo (uncomment %wheel ALL=(ALL) ALL
 su username
 curl -LO raw.githubusercontent.com/miraz12/dotfiles/main/install.sh
-./install install
+./install paru
 #+END_SRC
 
 *** Pull this repo, install paru, nvim-packer and iosevka font
