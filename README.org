@@ -7,14 +7,20 @@ curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 #+END_SRC
 
 ** Setup 
-*** Install packages, clone doom, install yay
+*** Install packages
 #+BEGIN_SRC bash install
 pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
-useradd shaggy
-usermod -aG sudo wheel shaggy
 #+END_SRC
 
 #+BEGIN_SRC bash
+useradd shaggy
+usermod -aG sudo wheel shaggy
+passwd user
+visudo (uncomment %wheel ALL=(ALL) ALL
+su shaggy
+#+END_SRC
+
+#+BEGIN_SRC bash paru
 git clone https://aur.archlinux.org/paru.git paru 
 cd paru 
 makepkg -si
