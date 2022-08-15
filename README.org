@@ -2,7 +2,7 @@
 ** Install arch
 https://wiki.archlinux.org/title/Installation_guide
 
-#+BEGIN_SRC bash install
+#+BEGIN_SRC bash
 curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 #+END_SRC
 
