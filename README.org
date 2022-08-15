@@ -19,13 +19,12 @@ usermod -aG sudo wheel username
 passwd username
 visudo (uncomment %wheel ALL=(ALL) ALL
 su username
-curl -LO raw.githubusercontent.com/miraz12/dotfiles/main/install.sh
-./install paru
+curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 #+END_SRC
 
 *** Pull this repo, install paru, nvim-packer and iosevka font
 #+BEGIN_SRC bash paru
-git clone https://github.com/miraz12/dotfiles.git .dotfiles
+
 git clone https://aur.archlinux.org/paru.git paru 
 cd paru 
 makepkg -si
