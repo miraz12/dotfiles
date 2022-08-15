@@ -12,14 +12,16 @@ curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
 #+END_SRC
 
+*** Add root user
 #+BEGIN_SRC bash
-useradd shaggy
-usermod -aG sudo wheel shaggy
-passwd user
+useradd username
+usermod -aG sudo wheel username
+passwd username
 visudo (uncomment %wheel ALL=(ALL) ALL
-su shaggy
+su username
 #+END_SRC
 
+*** Install paru, nvim-packer and iosevka font
 #+BEGIN_SRC bash paru
 git clone https://aur.archlinux.org/paru.git paru 
 cd paru 
@@ -27,11 +29,12 @@ makepkg -si
 paru -S nvim-packer-git ttf-iosevka
 #+END_SRC
 
+*** Install extras, link xmonad
 #+BEGIN_SRC bash
 ln -s -f ~/.dotfiles/xmonad ~/.config/xmonad
 sudo pacman -S tff-font-awesome trayer dmenu kwallet-pam
 #+END_SRC
-Install xmonad, xmonad-contrib and xmobar with stack.
+
 
 *** Setup email
 #+BEGIN_SRC bash
