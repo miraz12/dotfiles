@@ -1,6 +1,7 @@
 * Dotfiles
 ** Install arch
 https://wiki.archlinux.org/title/Installation_guide
+curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/readme.org | bash
 
 ** Setup 
 *** Install packages, clone doom, install yay
