@@ -3,8 +3,7 @@
 https://wiki.archlinux.org/title/Installation_guide
 
 #+BEGIN_SRC bash
-curl -LO raw.githubusercontent.com/miraz12/dotfiles/main/install.sh
-./install install
+curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 #+END_SRC
 
 ** Setup 
