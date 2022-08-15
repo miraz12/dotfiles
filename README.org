@@ -9,7 +9,7 @@ curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 ** Setup 
 *** Install packages, clone doom, install yay
 #+BEGIN_SRC bash install
-sudo pacman -S --noconfirm xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
+pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
 git clone https://aur.archlinux.org/paru.git paru 
 cd paru 
 makepkg -si
