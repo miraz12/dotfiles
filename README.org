@@ -15,7 +15,7 @@ pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel next
 *** Add root user
 #+BEGIN_SRC bash
 useradd username
-usermod -aG sudo wheel username
+usermod -aG wheel username
 passwd username
 visudo (uncomment %wheel ALL=(ALL) ALL
 su username
