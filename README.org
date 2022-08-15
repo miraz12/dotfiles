@@ -19,6 +19,7 @@ usermod -aG sudo wheel username
 passwd username
 visudo (uncomment %wheel ALL=(ALL) ALL
 su username
+git clone https://github.com/miraz12/dotfiles.git .dotfiles
 #+END_SRC
 
 *** Install paru, nvim-packer and iosevka font
