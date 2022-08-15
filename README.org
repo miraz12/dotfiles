@@ -3,7 +3,8 @@
 https://wiki.archlinux.org/title/Installation_guide
 
 #+BEGIN_SRC bash
-curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
+curl -LO raw.githubusercontent.com/miraz12/dotfiles/main/install.sh
+./install install
 #+END_SRC
 
 ** Setup 
@@ -19,11 +20,13 @@ usermod -aG sudo wheel username
 passwd username
 visudo (uncomment %wheel ALL=(ALL) ALL
 su username
-git clone https://github.com/miraz12/dotfiles.git .dotfiles
+curl -LO raw.githubusercontent.com/miraz12/dotfiles/main/install.sh
+./install install
 #+END_SRC
 
-*** Install paru, nvim-packer and iosevka font
+*** Pull this repo, install paru, nvim-packer and iosevka font
 #+BEGIN_SRC bash paru
+git clone https://github.com/miraz12/dotfiles.git .dotfiles
 git clone https://aur.archlinux.org/paru.git paru 
 cd paru 
 makepkg -si
