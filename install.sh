@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -LO raw.githubusercontent.com/miraz12/dotfiles/main/README.org
+curl -LO "raw.githubusercontent.com/miraz12/dotfiles/main/README.org"
 
 codeblock=0
 while read line; 
