@@ -10,7 +10,8 @@ curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 *** Install packages, clone doom, install yay
 #+BEGIN_SRC bash install
 pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
-sudo adduser shaggy sudo wheel
+useradd shaggy
+usermod -aG sudo wheel shaggy
 #+END_SRC
 
 #+BEGIN_SRC bash
