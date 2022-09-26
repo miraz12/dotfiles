@@ -85,14 +85,15 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR="vim" 
-   export TERM="xterm"
  else
    export EDITOR="emacsclient -t"
    export VISUAL="emacsclient -c -a emacs"
-   export TERM="xterm"
+   export TERM="kitty"
+   export BROWSER="firefox"
  fi
 
 export PATH=$PATH:~/.local/bin
+export DRI_PRIME=1
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -108,5 +109,6 @@ export PATH=$PATH:~/.local/bin
 
 alias vim='nvim'
 alias emacs='emacsclient --create-frame --alternate-editor=""'
+alias icat="kitty +kitten icat"
 
 cbonsai -p

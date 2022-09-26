@@ -134,8 +134,8 @@ myManageHook = composeAll
   [ resource  =? "desktop_window" --> doIgnore
   , isFloat --> doCenterFloat
   , isDialog --> doCenterFloat
-  , title =? "League of Legends" --> doFloat
-  , title =? "Riot Client Main" --> doFloat
+  , title =? "leagueclientux.exe" --> doFloat
+  , title =? "riotclientux.exe" --> doFloat
   , insertPosition Master Newer
   ] <+> manageDocks  
 
@@ -145,8 +145,11 @@ myManageHook = composeAll
 
 myStartupHook :: X ()
 myStartupHook = do
-    spawn "killall trayer; trayer --monitor 2 --edge top --align right --widthtype request --padding 7 --iconspacing 10 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x2B2E37  --height 20 &"
+    spawn "killall trayer; trayer --monitor 2 --edge top --align right --widthtype request --padding 7 --iconspacing 5 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x2B2E37  --height 20 &"
     spawn "killall feh; feh --bg-fill --no-fehbg ~/Pictures/snm.jpg &"
+    spawn "killall nextcloud; nextcloud &"
+    spawn "killall emacs; emacs --daemon &"
+    spawn "killall signal-desktop; signal-desktop --use-tray-icon &"
     modify $ \xstate -> xstate { windowset = onlyOnScreen 1 "1_1" (windowset xstate) }
 
 
