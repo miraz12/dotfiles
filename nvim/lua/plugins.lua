@@ -5,4 +5,5 @@ return require('packer').startup(function()
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use 'dracula/vim'
+  use 'ggandor/leap.nvim'
 end)
