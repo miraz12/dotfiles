@@ -24,7 +24,7 @@ ZSH_THEME="terminalparty"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -110,5 +110,6 @@ export DRI_PRIME=1
 alias vim='nvim'
 alias emacs='emacsclient --create-frame --alternate-editor=""'
 alias icat="kitty +kitten icat"
+alias neofetch="clear & neofetch"
 
 cbonsai -p
