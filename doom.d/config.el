@@ -129,3 +129,14 @@
 (defun shr-render-current-buffer ()
   (shr-render-region (point-min) (point-max)))
 (setq mu4e-html2text-command 'shr-render-current-buffer)
+
+(defun my-open-calendar ()
+  (interactive)
+  (cfw:open-calendar-buffer
+   :contents-sources
+   (list
+    (cfw:org-create-source "Green")  ; org-agenda source
+    ;; (cfw:cal-create-source "Orange") ; diary source
+    (cfw:ical-create-source "JessicaAnton" "~/.dotfiles/jessicaanton-2022-10-20.ics" "Purple")  ; ICS source1
+    (cfw:ical-create-source "Anton" "~/.dotfiles/anton-christoffersson-1-2022-10-20.ics" "Blue")  ; ICS source1
+   )))

@@ -228,6 +228,7 @@ main = xmonad
         , rootMask = rootMask def .|. pointerMotionMask
         } `additionalKeysP`
           [ ("M-f"  , spawn "firefox"                   )
+           ,("M-p"  , spawn "rofi -show run"                   )
            ,("M-l", spawn "/home/shaggy/.config/xmonad/scripts/layout_switch.sh us se")
            ,("M-i"  , spawn "emacsclient --create-frame --alternate-editor=''"                   )
            ,("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")
