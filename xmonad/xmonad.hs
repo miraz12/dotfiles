@@ -1,5 +1,6 @@
 {-# OPTIONS_GHC -Wno-name-shadowing #-}
 {-# OPTIONS_GHC -Wno-missing-signatures #-}
+{-# OPTIONS_GHC -Wno-deprecations #-}
 import XMonad
 import System.Exit
 import Prelude hiding (log)
@@ -166,7 +167,7 @@ clickable icon ws = addActions [ (show i, 1), ("q", 2), ("Left", 4), ("Right", 5
 myStatusBarSpawner :: Applicative f => ScreenId -> f StatusBarConfig
 myStatusBarSpawner (S s) = do
                     pure $ statusBarPropTo ("_XMONAD_LOG_" ++ show s)
-                          ("xmobar ~/.config/xmonad/xmobar/xmobar.hs")
+                          ("xmobar -x " ++ show s ++ " ~/.config/xmonad/xmobar/xmobar" ++ show s ++ ".hs")
                           (pure $ myXmobarPP (S s))
 
 
