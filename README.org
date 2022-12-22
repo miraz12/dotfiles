@@ -28,7 +28,7 @@ git clone https://github.com/miraz12/dotfiles.git .dotfiles
 git clone https://aur.archlinux.org/paru.git paru 
 cd paru 
 makepkg -si
-paru -S nvim-packer-git ttf-iosevka
+paru -S nvim-packer-git ttf-iosevka ttf-font-awesome ttf-nerd-fonts-hack-complete-git
 #+END_SRC
 
 *** Install extras, link xmonad
@@ -55,6 +55,7 @@ mu init --maildir ~/.mail
 #+BEGIN_SRC bash
 ln -s -f ~/.dotfiles/nvim ~/.config/nvim
 ln -s -f ~/.dotfiles/kitty ~/.config/kitty
+ln -s -f ~/.dotfiles/rofi ~/.config/rofi
 ln -s -f ~/.dotfiles/oh-my-zsh ~/.oh-my-zsh
 ln -s -f ~/.dotfiles/.zshrc ~/.zshrc
 #+END_SRC

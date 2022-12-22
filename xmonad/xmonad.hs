@@ -104,7 +104,13 @@ switchScreen d = do s <- screenBy d
 mySpacing :: Integer -> Integer -> l a -> ModifiedLayout Spacing l a
 mySpacing i j = spacingRaw False (Border i i i i) True (Border j j j j) True
 
-myLayoutHook = avoidStruts $ onWorkspaces ["0_9", "1_9"] layoutGrid $ layoutTall ||| layoutTabbed
+toggleFull = withFocused (\windowId -> do
+    { floats <- gets (W.floating . windowset);
+        if windowId `M.member` floats
+        then withFocused $ windows . W.sink
+        else withFocused $ windows . (flip W.float $ W.RationalRect 0 0 1 1) })
+
+myLayoutHook = avoidStruts $ onWorkspaces ["0_9", "1_9"] layoutGrid $ layoutTall ||| layoutTabbed ||| layoutGrid
   where
     layoutTall = mkToggle (NBFULL ?? EOT) . named "tall" $ draggingVisualizer $ smartBorders $ mySpacing 15 15 $ mouseResizableTile { masterFrac = 0.65, draggerType = FixedDragger 0 30}
     layoutGrid = mkToggle (NBFULL ?? EOT) . named "grid" $ draggingVisualizer $ smartBorders $ mySpacing 15 15 $ Grid False
@@ -147,10 +153,6 @@ myManageHook = composeAll
 myStartupHook :: X ()
 myStartupHook = do
     spawn "killall trayer; trayer --monitor 2 --edge top --align right --widthtype request --padding 7 --iconspacing 5 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x2B2E37  --height 20 &"
-    spawn "killall feh; feh --bg-fill --no-fehbg ~/Pictures/snm.jpg &"
-    spawn "killall nextcloud; nextcloud &"
-    spawn "killall emacs; emacs --daemon &"
-    spawn "killall signal-desktop; signal-desktop --use-tray-icon &"
     modify $ \xstate -> xstate { windowset = onlyOnScreen 1 "1_1" (windowset xstate) }
 
 
@@ -227,9 +229,9 @@ main = xmonad
 
         , rootMask = rootMask def .|. pointerMotionMask
         } `additionalKeysP`
-          [ ("M-f"  , spawn "firefox"                   )
-           ,("M-p"  , spawn "rofi -show run"                   )
-           ,("M-l", spawn "/home/shaggy/.config/xmonad/scripts/layout_switch.sh us se")
+          [ ("M-f"  , spawn "firefox")
+           ,("M-p"  , spawn "rofi -show run")
+           ,("M-b"  , toggleFull)
            ,("M-i"  , spawn "emacsclient --create-frame --alternate-editor=''"                   )
            ,("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")
            ,("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@  -1.5%")
