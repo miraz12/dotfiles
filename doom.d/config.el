@@ -115,17 +115,17 @@
 (setq org-hugo-base-dir "~/sites/org-roam/")
 
 (setq org-publish-project-alist
-'(
- ("org-notes"
- :base-directory "~/org/roam"
- :base-extension "org"
- :publishing-directory "~/public_hugo/"
- :recursive t
- :publishing-function org-hugo-export-to-md
- :headline-levels 4             ; Just the default for this project.
- :auto-preamble t
- )
- ))
+      '(
+        ("org-notes"
+         :base-directory "~/org/roam"
+         :base-extension "org"
+         :publishing-directory "~/public_hugo/"
+         :recursive t
+         :publishing-function org-hugo-export-to-md
+         :headline-levels 4             ; Just the default for this project.
+         :auto-preamble t
+         )
+        ))
 (defun shr-render-current-buffer ()
   (shr-render-region (point-min) (point-max)))
 (setq mu4e-html2text-command 'shr-render-current-buffer)
@@ -139,4 +139,13 @@
     ;; (cfw:cal-create-source "Orange") ; diary source
     (cfw:ical-create-source "JessicaAnton" "~/.dotfiles/jessicaanton-2022-10-20.ics" "Purple")  ; ICS source1
     (cfw:ical-create-source "Anton" "~/.dotfiles/anton-christoffersson-1-2022-10-20.ics" "Blue")  ; ICS source1
-   )))
+    )))
+
+(setq lsp-clients-clangd-args '("-j=3"
+                                "--background-index"
+                                "--clang-tidy"
+                                "--completion-style=detailed"
+                                "--header-insertion=never"
+                                "--header-insertion-decorators=0"))
+
+(setq fancy-splash-image (concat doom-private-dir "splash.png"))
