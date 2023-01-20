@@ -9,7 +9,7 @@ curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 ** Setup 
 *** Install packages
 #+BEGIN_SRC bash install
-pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh
+pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh sway
 #+END_SRC
 
 *** Add root user
@@ -22,21 +22,22 @@ su username
 git clone https://github.com/miraz12/dotfiles.git .dotfiles
 #+END_SRC
 
-*** Pull this repo, install paru, nvim-packer and iosevka font
+*** Pull this repo, install paru, nvim-packer, iosevka font and swaync
 #+BEGIN_SRC bash paru
 
 git clone https://aur.archlinux.org/paru.git paru 
 cd paru 
 makepkg -si
-paru -S nvim-packer-git ttf-iosevka ttf-font-awesome ttf-nerd-fonts-hack-complete-git
+paru -S nvim-packer-git ttf-iosevka ttf-font-awesome ttf-nerd-fonts-hack-complete-git swaync
 #+END_SRC
 
-*** Install extras, link xmonad
+*** Install extras, link sway
 #+BEGIN_SRC bash
-ln -s -f ~/.dotfiles/xmonad ~/.config/xmonad
-sudo pacman -S tff-font-awesome trayer dmenu kwallet-pam
+sudo systemctl enable seatd
+sudo systemctl start seatd
+ln -s -f ~/.dotfiles/sway ~/.config/sway
+sudo pacman -S tff-font-awesome rofi kwallet-pam
 #+END_SRC
-Install xmonad, xmonad-contrib and xmobar with stack.
 
 
 *** Setup email
