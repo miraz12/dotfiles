@@ -9,7 +9,7 @@ curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 ** Setup 
 *** Install packages
 #+BEGIN_SRC bash install
-pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh sway
+pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh sway waybar
 #+END_SRC
 
 *** Add root user
@@ -31,11 +31,12 @@ makepkg -si
 paru -S nvim-packer-git ttf-iosevka ttf-font-awesome ttf-nerd-fonts-hack-complete-git swaync
 #+END_SRC
 
-*** Install extras, link sway
+*** Install extras, link sway and waybar
 #+BEGIN_SRC bash
 sudo systemctl enable seatd
 sudo systemctl start seatd
 ln -s -f ~/.dotfiles/sway ~/.config/sway
+ln -s -f ~/.dotfiles/waybar ~/.config/waybar
 sudo pacman -S tff-font-awesome rofi kwallet-pam
 #+END_SRC
 
