@@ -93,7 +93,6 @@ export LANG=en_US.UTF-8
  fi
 
 export PATH=$PATH:~/.local/bin
-export DRI_PRIME=1
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -111,5 +110,6 @@ alias vim='nvim'
 alias emacs='emacsclient --create-frame --alternate-editor=""'
 alias icat="kitty +kitten icat"
 alias neofetch="clear & neofetch"
+alias startsway="exec sway &> ~/.wsession-errors"
 
 cbonsai -p
