@@ -19,11 +19,16 @@ bindsym {
     # Reload the configuration file
     $mod+q reload
 
+    # Screen capture
+    #Print exec /usr/share/sway/scripts/grimshot --notify save area
+    # Print /usr/share/sway/scripts/grimshot
+    Print exec /usr/share/sway/scripts/grimshot --notify save output - | swappy -f -
+
     # Exit sway (logs you out of your Wayland session)
     $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    #
-    # Laptop specific
-    #
+#
+# Laptop specific
+#
     XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1.5%
     XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@  -1.5%
     XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle

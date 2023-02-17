@@ -84,7 +84,13 @@ for_window {
     [window_role="bubble"] floating enable
     [window_role="dialog"] floating enable
     [window_type="dialog"] floating enable
+    # For pop up notification windows that don't use notifications api
+    [app_id="zoom" title="^zoom$"] border none, floating enable
+    # For specific Zoom windows
+    [app_id="zoom" title="^(Zoom|About)$"] border pixel, floating enable
+    [app_id="zoom" title="Settings"] floating enable, floating_minimum_size 960 x 700
 }
+
 
 gaps {
     inner 20
