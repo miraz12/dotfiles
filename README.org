@@ -9,7 +9,7 @@ curl -fsSL raw.githubusercontent.com/miraz12/dotfiles/main/install.sh | bash
 ** Setup 
 *** Install packages
 #+BEGIN_SRC bash install
-pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh sway waybar
+pacman -S --noconfirm sudo xorg neovim emacs git firefox openssh base-devel nextcloud-client networkmanager kitty zsh sway waybar btop bat fd grex duf
 #+END_SRC
 
 *** Add root user

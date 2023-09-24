@@ -78,7 +78,7 @@
 
 ;; Org-roam
 (setq org-roam-directory (file-truename "~/org/roam"))
-(org-roam-db-autosync-mode)
+;; (org-roam-db-autosync-mode)
 (add-to-list 'display-buffer-alist
              '("\\*org-roam\\*"
                (display-buffer-in-direction)

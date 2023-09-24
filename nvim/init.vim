@@ -1,5 +1,9 @@
 " Its VIM, not vi
 set nocompatible
+set relativenumber 
+set ignorecase smartcase  
+set clipboard+=unnamedplus
+set autoindent smartindent
 syntax on
 filetype plugin indent on
 

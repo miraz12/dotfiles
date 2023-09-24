@@ -35,7 +35,8 @@ set {
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output eDP-1 bg /home/shaggy/Pictures/snm.jpg fill
+output eDP-1 pos 0 0 bg /home/shaggy/Pictures/snm.jpg fill
+output HDMI-A-1 pos 1920 0 res 3840x2160
 
 #
 # Example configuration:
@@ -98,8 +99,8 @@ gaps {
     top 2
 }
 
-default_border none
-default_floating_border none
+default_border pixel 2
+default_floating_border pixel 2
 titlebar_padding 1
 titlebar_border_thickness 0
 

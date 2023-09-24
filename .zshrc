@@ -85,10 +85,11 @@ export LANG=en_US.UTF-8
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR="vim" 
+   export TERM="xterm"
  else
+   export TERM="xterm"
    export EDITOR="emacsclient -t"
    export VISUAL="emacsclient -c -a emacs"
-   export TERM="kitty"
    export BROWSER="firefox"
  fi
 
@@ -111,5 +112,9 @@ alias emacs='emacsclient --create-frame --alternate-editor=""'
 alias icat="kitty +kitten icat"
 alias neofetch="clear & neofetch"
 alias startsway="exec sway &> ~/.wsession-errors"
+alias top='btop'
+alias cat='bat'
+alias df='duf'
 
 cbonsai -p
+#eval "$(starship init zsh)"
