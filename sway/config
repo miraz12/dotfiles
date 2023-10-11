@@ -36,7 +36,7 @@ set {
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output eDP-1 pos 0 0 bg /home/shaggy/Pictures/snm.jpg fill
-output HDMI-A-1 pos 1920 0 res 3840x2160
+output HDMI-A-1 pos 1920 0 bg /home/shaggy/Pictures/snm.jpg fill res 3840x1440@60.000Hz
 
 #
 # Example configuration:
